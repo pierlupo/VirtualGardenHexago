@@ -13,26 +13,18 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class PlantEntity {
+public class CommentEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private int id;
 
-    private  String name;
-
-    private  String description;
+    private String content;
 
     @ManyToMany
-    private List<CommentEntity> commentEntitiess;
+    private List<PlantEntity> plantEntities;
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-
-    public int getId() {
-        return id;
-    }
+    @ManyToOne
+    private UserEntity userEntity;
 }

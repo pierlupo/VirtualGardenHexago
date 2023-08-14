@@ -5,7 +5,6 @@ import com.domain.port.PlantRepo;
 import com.domain.service.PlantService;
 
 import java.util.List;
-import java.util.Optional;
 
 public class PlantServiceImpl implements PlantService {
 
@@ -31,6 +30,11 @@ public class PlantServiceImpl implements PlantService {
 
     @Override
     public void deletePlant(int id) {
-        plantRepo.deleteById(id);
+        try {
+            Plant plant = findById(id);
+            plantRepo.delete(plant);
+        }catch (Exception ex) {
+            throw new RuntimeException(ex.getMessage());
+        }
     }
 }
