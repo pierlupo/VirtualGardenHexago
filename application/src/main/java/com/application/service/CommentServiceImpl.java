@@ -22,8 +22,8 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public Comment saveComment(String content, int userId, int plantId) {
-        if(plantService.findById(plantId).isPresent() && userService.findById(userId).isPresent()){
-            Comment comment = new Comment(content, plantService.findById(plantId).get(), userService.findById(userId).get());
+        if(plantService.findById(plantId)!= null && userService.findById(userId)!=null){
+            Comment comment = new Comment(content, plantService.findById(plantId), userService.findById(userId));
             commentRepo.save(comment);
         }
         throw new RuntimeException();

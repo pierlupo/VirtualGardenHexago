@@ -1,5 +1,7 @@
 package com.domain.model;
 
+import java.util.Set;
+
 public class User {
         private int id;
         private final String username;
@@ -16,7 +18,8 @@ public class User {
             this.password = password;
         }
 
-        public int getId() {
+
+    public int getId() {
             return id;
         }
 

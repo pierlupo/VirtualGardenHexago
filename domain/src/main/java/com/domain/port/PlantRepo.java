@@ -9,6 +9,6 @@ public interface PlantRepo {
 
     Plant save(Plant plant);
     List<Plant> findAll();
-    Optional<Plant> findById(int id);
-    void deleteById(int id);
+    Plant findById(int id);
+    void delete(Plant plant);
 }

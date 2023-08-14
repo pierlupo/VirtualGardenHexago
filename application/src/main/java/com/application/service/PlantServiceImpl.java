@@ -25,7 +25,7 @@ public class PlantServiceImpl implements PlantService {
         return plantRepo.findAll();    }
 
     @Override
-    public Optional<Plant> findById(int id) {
+    public Plant findById(int id) {
         return plantRepo.findById(id);
     }
 
