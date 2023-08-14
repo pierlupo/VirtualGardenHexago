@@ -10,7 +10,11 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     private final UserRepo userRepo;
-    private final PasswordAppEncoder passwordEncoder;
+    private  PasswordAppEncoder passwordEncoder;
+
+    public UserServiceImpl(UserRepo userRepo) {
+        this.userRepo = userRepo;
+    }
 
     public UserServiceImpl(UserRepo userRepo, PasswordAppEncoder passwordEncoder) {
         this.userRepo = userRepo;
