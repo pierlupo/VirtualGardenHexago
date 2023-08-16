@@ -29,15 +29,13 @@ public class UserController {
 
     private final AuthenticationManager authenticationManager;
 
-    private UserRepo userRepo;
     private UserService userService;
     private final PasswordEncoder passwordEncoder;
     private final JWTGenerator generator;
 
-    public UserController(AuthenticationManager authenticationManager, UserRepo userRepo, PasswordEncoder passwordEncoder, JWTGenerator generator) {
+    public UserController(AuthenticationManager authenticationManager, UserService userService, PasswordEncoder passwordEncoder, JWTGenerator generator) {
         this.authenticationManager = authenticationManager;
-        this.userRepo = userRepo;
-        this.userService = new UserServiceImpl(userRepo, new BCryptPasswordEncoder());
+        this.userService = userService;
         this.passwordEncoder = passwordEncoder;
         this.generator = generator;
     }

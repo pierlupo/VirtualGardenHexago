@@ -14,8 +14,9 @@ public class PlantServiceImpl implements PlantService {
         this.plantRepo = plantRepo;
     }
 
+
     @Override
-    public Plant addPlant(String name, String description) {
+    public Plant addPlant(String name, String description, int level) {
         Plant plant = new Plant(name, description, level);
         return plantRepo.save(plant); }
 
@@ -36,5 +37,10 @@ public class PlantServiceImpl implements PlantService {
         }catch (Exception ex) {
             throw new RuntimeException(ex.getMessage());
         }
+    }
+
+    @Override
+    public void updatePlant(int id, int level) {
+        plantRepo.update(id, level);
     }
 }

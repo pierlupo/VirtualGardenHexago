@@ -47,6 +47,13 @@ public class PlantRepoImpl implements PlantRepo {
         plantEntityRepo.delete(modelMapper.map(plant, PlantEntity.class));
     }
 
+    @Override
+    public void update(int id, int level) {
+        PlantEntity plantEntity = plantEntityRepo.findById(id).get();
+        plantEntity.setLevel(level);
+        plantEntityRepo.save(plantEntity);
+    }
+
     //Convertir une liste de PlantEntity en Liste de Plant
     private List<Plant> convertToListPlants(List<PlantEntity> plantEntities) {
         List<Plant> plants = new ArrayList<>();

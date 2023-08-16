@@ -24,6 +24,9 @@ public class PlantEntity {
 
     private  String description;
 
+    private int level;
+
+
     @ManyToMany
     private List<CommentEntity> commentEntitiess;
 
