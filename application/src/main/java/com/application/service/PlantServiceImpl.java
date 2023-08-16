@@ -16,7 +16,7 @@ public class PlantServiceImpl implements PlantService {
 
     @Override
     public Plant addPlant(String name, String description) {
-        Plant plant = new Plant(name, description);
+        Plant plant = new Plant(name, description, level);
         return plantRepo.save(plant); }
 
     @Override

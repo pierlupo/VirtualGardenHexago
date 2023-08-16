@@ -5,8 +5,6 @@ import com.domain.port.PasswordAppEncoder;
 import com.domain.port.UserRepo;
 import com.domain.service.UserService;
 
-import java.util.Optional;
-
 public class UserServiceImpl implements UserService {
 
     private final UserRepo userRepo;

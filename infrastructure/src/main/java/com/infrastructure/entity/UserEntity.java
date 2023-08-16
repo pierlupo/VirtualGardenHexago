@@ -24,7 +24,7 @@ public class UserEntity {
 
     private String password;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY)
     private List<CommentEntity> commentEntities;
 
     public void setId(int id) {
